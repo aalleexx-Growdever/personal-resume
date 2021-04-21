@@ -3,7 +3,7 @@ import axios from 'axios';
 
 class ApiServices {
   async saveContact(contact) {
-    const url = 'http://localhost:8080/contacts';
+    const url = 'https://personal-resume-database.herokuapp.com/contacts';
     try {
       const response = await axios.post(`${url}`, { contact });
       console.log(response.data);
@@ -13,7 +13,7 @@ class ApiServices {
   }
 
   async saveFeedback(feedback) {
-    const url = 'http://localhost:8080/feedbacks';
+    const url = 'https://personal-resume-database.herokuapp.com/feedbacks';
     try {
       const response = await axios.post(`${url}`, { feedback });
       console.log(response.data);
