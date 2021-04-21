@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import bg from '../../details/images/contact.jpg';
+import bg from '../../details/images/feedbcak.jpg';
 
 const useStyles = makeStyles((theme) => ({
   bg: {
@@ -11,8 +11,8 @@ const useStyles = makeStyles((theme) => ({
   },
   main: {
     position: 'relative',
-    top: 0,
-    right: 150,
+    top: -50,
+    right: -200,
     height: '70vh',
     padding: '1%',
     backgroundColor: '#A4A0A0',

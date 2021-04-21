@@ -6,6 +6,7 @@ import Skills from '../pages/Skills';
 import Academic from '../pages/Academic';
 import History from '../pages/History';
 import Future from '../pages/Future';
+import Feedback from '../pages/Feedback';
 import Contact from '../pages/Contact';
 
 export default function Routes() {
@@ -18,7 +19,7 @@ export default function Routes() {
         <Route path="/history" exact component={History} />
         <Route path="/academic" exact component={Academic} />
         <Route path="/future" exact component={Future} />
-        <Route path="/feedback" exact component={Future} />
+        <Route path="/feedback" exact component={Feedback} />
         <Route path="/contact" exact component={Contact} />
       </Switch>
     </BrowserRouter>

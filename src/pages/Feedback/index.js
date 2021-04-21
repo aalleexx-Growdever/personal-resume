@@ -3,18 +3,16 @@ import {
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { ArrowBack } from '@material-ui/icons';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Api from '../../services/api';
 import useStyles from './styles';
 
 export default function Home() {
   const classes = useStyles();
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
-  const [email, setEmail] = useState('');
+  const [text, setText] = useState('');
   const [invalidName, setInvalidName] = useState(false);
-  const [invalidNumber, setInvalidNumber] = useState(false);
-  const [invalidEmail, setInvalidEmail] = useState(false);
+  const [invalidText, setInvalidText] = useState(false);
   const [saved, setSaved] = useState(false);
 
   function timer() {
@@ -25,23 +23,19 @@ export default function Home() {
   async function onSave(event) {
     event.preventDefault();
     setInvalidName(false);
-    setInvalidNumber(false);
-    setInvalidEmail(false);
+    setInvalidText(false);
     setSaved(false);
 
     if (!name) {
       setInvalidName(true);
-    } else if (!number) {
-      setInvalidNumber(true);
-    } else if (!email) {
-      setInvalidEmail(true);
+    } else if (!text) {
+      setInvalidText(true);
     } else {
-      const contact = { name, number, email };
-      await Api.saveContact(contact);
+      const feedback = { name, text };
+      await Api.saveFeedback(feedback);
       setSaved(true);
       setName('');
-      setNumber('');
-      setEmail('');
+      setText('');
       timer();
     }
   }
@@ -56,9 +50,8 @@ export default function Home() {
         </Grid>
         <Grid container item direction="column" justify="center" alignItems="center">
           <form className={classes.form}>
-            <TextField color="primary" label="Nome" variant="filled" required className={classes.formInput} value={name} onChange={(e) => setName(e.target.value)} error={invalidName} />
-            <TextField color="primary" label="Telefone" variant="filled" required className={classes.formInput} value={number} onChange={(e) => setNumber(e.target.value)} error={invalidNumber} />
-            <TextField color="primary" label="Email" variant="filled" required className={classes.formInput} value={email} onChange={(e) => setEmail(e.target.value)} error={invalidEmail} />
+            <TextField color="primary" label="Nome" variant="standard" required className={classes.formInput} value={name} onChange={(e) => setName(e.target.value)} error={invalidName} />
+            <TextField color="primary" label="Feedback" variant="filled" multiline rows={6} required className={classes.formInput} value={text} onChange={(e) => setText(e.target.value)} error={invalidText} />
           </form>
         </Grid>
         <Button variant="text" className={classes.btn} onClick={onSave}>
