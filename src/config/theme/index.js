@@ -1,37 +1,34 @@
 import { createMuiTheme } from '@material-ui/core';
 import { ptBR } from '@material-ui/core/locale';
-import 'fontsource-roboto';
+import 'typeface-roboto';
+import bg from '../../details/images/bg1.jpg';
 
 export default createMuiTheme({
   palette: {
     primary: {
-      main: '#2b385b',
-    },
-    secondary: {
-      main: '#e16e0e',
+      main: '#ADD8E6',
     },
   },
   typography: {
-    fontFamily: [
-      'Roboto',
-    ],
-    fontSize: 14,
+    fontFamily: 'Roboto',
+    fontSize: 15,
   },
   overrides: {
     MuiCssBaseline: {
       '@global': {
         'html, body': {
           WebkitFontSmoothing: 'auto',
-          backgroundColor: '#f7f7f7',
-          color: '#2b385b',
+          backgroundImage: `url(${bg})`,
+          backgroundSize: 'cover',
         },
       },
     },
     MuiButton: {
       root: {
-        borderRadius: '20px',
-        fontSize: '10px',
+        borderRadius: '10px',
+        fontSize: '20px',
       },
     },
   },
-});
+},
+ptBR);
