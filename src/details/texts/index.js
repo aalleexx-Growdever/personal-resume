@@ -9,9 +9,9 @@ const history = [
   {
     title: 'Atualmente',
     period: '09/2018 - atualmente',
-    role: 'Massoterapêuta autônomo',
+    role: 'Massoterapeuta autônomo',
     where: 'Becker&Kersten Massoterapia - Sapiranga',
-    description: 'Atendimento a clientes em sessões de massoterapia e reflexologia podal, visando o tratamento de dores musculares, tensões e extresse.',
+    description: 'Atendimento a clientes em sessões de massoterapia e reflexologia podal, visando o tratamento de dores musculares, tensões e estresse.',
   },
   {
     title: 'Mais recente',
